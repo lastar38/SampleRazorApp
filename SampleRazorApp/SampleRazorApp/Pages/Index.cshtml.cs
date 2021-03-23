@@ -13,6 +13,8 @@ namespace SampleRazorApp.Pages
         private readonly ILogger<IndexModel> _logger;
 
         public string Message { get; set; } = "sample message";
+        private string Name = "no-name";
+        private string Mail = "no-mail";
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -22,6 +24,11 @@ namespace SampleRazorApp.Pages
         public void OnGet()
         {
             Message = "これはメッセージプロパティの値です!!";
+        }
+
+        public string getData()
+        {
+            return "[名前:" + Name + ", メール：" + Mail + "]";
         }
     }
 }
