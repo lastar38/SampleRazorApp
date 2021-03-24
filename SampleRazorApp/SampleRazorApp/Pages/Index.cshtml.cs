@@ -13,30 +13,15 @@ namespace SampleRazorApp.Pages
         private readonly ILogger<IndexModel> _logger;
 
         public string Message { get; set; } = "sample message";
-        private string[][] data = new string[][]
-        {
-            new string[]{"Taro", "taro@yamada"},
-            new string[]{"Hanako", "hanako@flower"},
-            new string[]{"Sachiko", "sachiko@happy"}
-        };
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
-        [BindProperty(SupportsGet = true)]
-        public int id { get; set; }
-
         public void OnGet()
         {
-            Message = "これはメッセージプロパティの値です!!";
-        }
-
-        public string getData(int id)
-        {
-            string[] target = data[id];
-            return "[名前:" + target[0] + ", メール：" + target[1] + "]";
+            Message = "何か書いてください";
         }
     }
 }

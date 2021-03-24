@@ -1,11 +1,14 @@
-﻿@page "{id?}"
+﻿@page 
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4 mb-4">Welcome</h1>
     <p class="h4">@Model.Message</p>
-    <p class="h5">@Model.getData(Model.id)</p>
+    <form asp-page="Other">
+        <input type="text" name="msg" class="form-control" />
+        <input type="submit" class="btn btn-primary" />
+    </form>
 </div>
