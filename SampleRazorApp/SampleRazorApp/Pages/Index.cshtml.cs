@@ -27,6 +27,8 @@ namespace SampleRazorApp.Pages
         [DataType(DataType.PhoneNumber)]
         public string Tel { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
