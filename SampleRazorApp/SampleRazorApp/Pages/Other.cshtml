@@ -11,32 +11,32 @@
     {
         <div class="form-group">
             <label class="col-form-label h5">
-                @Html.CheckBox("check", true, new { @class = "form-check-input" })
+                @Html.CheckBoxFor(model => model.check, new { @class = "form-check-input"})
                 @Html.DisplayName("Checkbox1")
             </label>
         </div>
         <div class="form-group">
             <label class="col-form-label h5">
-                @Html.RadioButton("gender", Gender.male, true, new { @class = "form-check-input" })
+                @Html.RadioButtonFor(model => model.gender, Gender.male, new { @class = "form-check-input"})
                 @Html.DisplayName("male")
             </label>
         </div>
         <div class="form-group">
             <label class="col-form-label h5">
-                @Html.RadioButton("gender", Gender.female, false, new { @class = "form-check-input" })
+                @Html.RadioButtonFor(model => model.gender, Gender.female, new { @class = "form-check-input" })
                 @Html.DisplayName("female")
             </label>
         </div>
         <div class="form-group">
             <label class="form-check h5">
                 @Html.DisplayName("PC")
-                @Html.DropDownList("pc", new SelectList(Enum.GetValues(typeof(Platform))), new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.pc, new SelectList(Enum.GetValues(typeof(Platform))), new { @class = "form-control" })
             </label>
         </div>
         <div class="form-group">
             <label class="form-label h5">
                 @Html.DisplayName("PC2")
-                @Html.ListBox("pc2", new MultiSelectList(Enum.GetValues(typeof(Platform))), new { @class = "form-control", size = 5 })
+                @Html.ListBoxFor(model => model.pc2, new MultiSelectList(Enum.GetValues(typeof(Platform))), new { @class = "form-control", size = 5})
             </label>
         </div>
         <div><input type="submit" /></div>
