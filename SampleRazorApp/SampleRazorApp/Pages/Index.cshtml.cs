@@ -28,6 +28,7 @@ namespace SampleRazorApp.Pages
         public string Tel { get; set; }
 
         [BindProperty(SupportsGet = true)]
+        public int Num { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
