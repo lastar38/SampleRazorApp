@@ -2,19 +2,16 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+}
 
-    string[] data = new[] { "one", "two", "three", "four", "five" };
-    Func<dynamic, object> hello = @<p class="display-4">Hello, @item !! </p>;
-
-    Func<dynamic, object> showList = @<ul class="h4">
-    @foreach (var ob in item)
-    {
-        <li>@ob</li>		 
-    }
-    </ul>;
+@section Between
+{
+    <p class="container alert alert-primary">
+        *これはヘッダーとコンテンツの間に表示されます
+    </p>
 }
 
 <div>
-    <p class="h4">@hello("Hanako")</p>
-    <p class="h4">@showList(data) </p>
+    <p class="h1">Welcome</p>
+    <p class="h4">入力してください</p>
 </div>
