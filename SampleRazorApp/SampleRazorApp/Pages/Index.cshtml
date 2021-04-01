@@ -2,26 +2,19 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-}
 
-@functions{
-    string hello(string name)
+    string[] data = new[] { "one", "two", "three", "four", "five" };
+    Func<dynamic, object> hello = @<p class="display-4">Hello, @item !! </p>;
+
+    Func<dynamic, object> showList = @<ul class="h4">
+    @foreach (var ob in item)
     {
-        return "Hello, " + name + "!!";
+        <li>@ob</li>		 
     }
-    int total(int n)
-    {
-        int re = 0;
-        for (int i = 1; i <= n; i++)
-        {
-            re += i;
-        }
-        return re;
-    }
+    </ul>;
 }
 
 <div>
-    <h1 class="display-4 mb-4">Welcome</h1>
-    <p class="h4">@hello("太郎")</p>
-    <p class="h4">@Model.Num の合計は、@total(Model.Num)です。 </p>
+    <p class="h4">@hello("Hanako")</p>
+    <p class="h4">@showList(data) </p>
 </div>
